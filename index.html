@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-container" id="formContainer">
+        <h2>Pendaftaran Mahasiswa</h2>
+        <p class="subtitle">Silakan lengkapi data diri Anda.</p>
+
+        <form id="formPendaftaran">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" name="nim" placeholder="9 digit NIM" required maxlength="9">
+                    <small id="nimError" class="error-text"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@gmail.com" required>
+                    <small id="emailError" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="telepon">No. Telepon</label>
+                    <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required maxlength="13">
+                    <small id="teleponError" class="error-text"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="jurusan">Program Studi</label>
+                    <select id="jurusan" name="jurusan" required>
+                        <option value="">-- Pilih Program Studi --</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Komputer">Teknik Komputer</option>
+                        <option value="Ilmu Komputer">Ilmu Komputer</option>
+                        <option value="Manajemen Informatika">Manajemen Informatika</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select id="semester" name="semester" required>
+                        <option value="">-- Pilih Semester --</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="Laki-laki" required>
+                        Laki-laki
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="Perempuan">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" id="btnKirim">Kirim Pendaftaran</button>
+        </form>
+    </div>
+
+    <div class="form-container" id="successContainer" style="display: none;">
+        <h2 class="success-title">Pendaftaran Berhasil!</h2>
+        <p class="subtitle">Data Anda telah tersimpan.</p>
+        
+        <table class="result-table">
+            <tr>
+                <td>Nama</td>
+                <td id="resultNama"></td>
+            </tr>
+            <tr>
+                <td>NIM</td>
+                <td id="resultNim"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td id="resultEmail"></td>
+            </tr>
+            <tr>
+                <td>Telepon</td>
+                <td id="resultTelepon"></td>
+            </tr>
+            <tr>
+                <td>Program Studi</td>
+                <td id="resultJurusan"></td>
+            </tr>
+            <tr>
+                <td>Semester</td>
+                <td id="resultSemester"></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td id="resultGender"></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td id="resultAlamat"></td>
+            </tr>
+        </table>
+
+        <button onclick="kembaliKeForm()" class="btn-secondary">Kembali ke Form</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
